@@ -23,15 +23,11 @@ function createGalleryMarkup(images) {
     
      function onImageClick(evt) {
          evt.preventDefault();
-       
-
-         const images = document.querySelectorAll(".gallery__image");
-            images.forEach(function(image) {
-            image.setAttribute("title", `${evt.target.getAttribute("alt")}`);
-             })
-       
     }
 
     const lightbox = new SimpleLightbox('.gallery a');
-    lightbox.options.captionDelay = 250;
+        lightbox.options.captionDelay = 250;
+        lightbox.options.captionsData = "alt";
+        lightbox.options.captionType = "attr";
+
 
